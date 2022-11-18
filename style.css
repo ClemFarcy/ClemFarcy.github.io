@@ -1,0 +1,29 @@
+
+
+.header{
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.footer{
+    background-color: lightslategrey;
+}
+.flex{
+	display:flex;
+	justify-content:space-evenly;
+}
+
+.flex div{
+	display:flex;
+	justify-content:space-evenly;
+	background-color:gainsboro;	
+	/*width:500px;*/
+}
+
+.flex1 p,h2,img{
+	display:flex;
+	margin:10px 10px 10px 10px;
+	flex-direction : column;
+	justify-content:center;
+}
