@@ -6,31 +6,49 @@
         <script>
             function afficheVille() 
             { 
-                let villeChoisie = "Niort"
-                alert(villeChoisie);
+                let nomVilleChoisie = document.getElementById("choixVille").value;
+                let villes = document.getElementsByClassName("ville");
+                for (i=0; i<villes.length; i++) {
+                    if (villes[i].id == nomVilleChoisie) {
+                    // garder l'element -> ELEMENT.style.display= "";
+	                    villes[i].style.display= "";
+                    } else {
+	                // cacher l'element visible -> ELEMENT.style.display= "none";
+	                    villes[i].style.display= "none";
+                    }
+  }
+                ;
                  
             }
         </script>
     </head>
-    <body onload="afficheVille()">
+    <body>
          
         <div class="header">
             <h1> TD n°4 Technologies web - Application météo</h1>
         </div>
+        <label for="ville-select">Choisissez une ville:</label>
+
+            <select onchange="afficheVille()" name="ville" id="choixVille">
+                <option value="">--Selectioner une ville --</option>
+                <option value="Niort">Niort</option>
+                <option value="Rio de Janeiro">Rio de Janeiro</option>
+                <option value="Stockholm">Stockholm</option>
+            </select>
         <div class="flex">
-        <div class="flex1">
+        <div class="flex1 ville" id="Niort">
             <h2>Niort</h2>
             <p>12°, pluvieux</p>
             <img src="pluvieux.png" width="25%"/>
         </div>
 
-        <div class="flex1">
+        <div class="flex1 ville" id="Rio de Janeiro">
             <h2>Rio de Janeiro</h2>
             <p>31°, ensoleille</p>
             <img src="ensoleille.png" width="25%"/>
         </div>
 
-        <div class="flex1">
+        <div class="flex1 ville" id="Stockholm">
             <h2>Stockholm</h2>
             <p>-4°, orageux</p>
             <img src="orageux.png" width="25%"/>
